@@ -2661,7 +2661,7 @@ class MetaTrader5(object):
         code = f"mt5.order_calc_profit(*{args},**{kwargs})"
         return self.__conn.eval(code)
 
-    def order_check(self, *args, **kwargs):
+    def order_check(self, request):
         r"""
         # order_check
 
@@ -2823,7 +2823,7 @@ class MetaTrader5(object):
 
 
         """
-        code = f"mt5.order_check(*{args},**{kwargs})"
+        code = f"mt5.order_check({request!r})"
         return self.__conn.eval(code)
 
     def order_send(self, request):
